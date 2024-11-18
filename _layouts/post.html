@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<aside role="complementary">
+  <p>
+    {{ site.author | escape }} is a seasoned IT professional based in Amsterdam.
+    Follow him on
+    <a href="https://linkedin.com/in/ricardodev" target="_blank">LinkedIn</a>
+    or via
+    <a href="{{ 'feed.xml' | absolute_url }}">feed</a>.
+  </p>
+</aside>
+
+<section role="main">
+  <article>
+    <h1>{{ page.title | escape }}</h1>
+
+    <footer>
+      <span class="date">{{ page.date | date: "%B %-d, %Y" }}</span>
+    </footer>
+
+    {{ content }}
+  </article>
+</section>

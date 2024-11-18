@@ -1,0 +1,9 @@
+title: ricardodevries.io
+author: Ricardo de Vries
+
+permalink: /notes/:title
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-gist

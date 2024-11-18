@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<aside role="complementary">
+  <p>
+    {{ site.author | escape }} is a seasoned IT professional based in Amsterdam.
+    Follow him on
+    <a href="https://linkedin.com/in/ricardodev" target="_blank">LinkedIn</a>
+    or via
+    <a href="{{ 'feed.xml' | absolute_url }}">feed</a>.
+  </p>
+</aside>
+
+<section class="notes">
+  {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year_group in posts_by_year %}
+  <h1 class="notes_year">{{ year_group.name }}</h1>
+
+  <ul class="notes_list">
+    {% for post in year_group.items %}
+    <li class="notes_item">
+      <h3><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h3>
+      <p>{{ post.date | date: "%B %d" }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</section>
